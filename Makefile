@@ -6,7 +6,7 @@
 #    By: amazurie <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 13:11:07 by amazurie          #+#    #+#              #
-#    Updated: 2016/11/12 14:09:48 by amazurie         ###   ########.fr        #
+#    Updated: 2016/11/14 12:38:11 by amazurie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,16 +22,21 @@ ft_strnstr.c ft_isascii.c ft_memmove.c ft_putstr.c ft_strdel.c ft_strmap.c \
 ft_strrchr.c ft_isdigit.c ft_memset.c ft_putstr_fd.c ft_strdup.c ft_strmapi.c \
 ft_strsplit.c ft_isprint.c ft_memalloc.c ft_putchar.c ft_strequ.c ft_strncat.c \
 ft_strstr.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
-ft_lstmap.c ft_isspace.c ft_isblank.c ft_isupper.c ft_islower.c ft_lstinsert.c \
-ft_lstsearch.c ft_strndup.c ft_strtrimc.c ft_strnjoin.c
+ft_lstmap.c ft_isspace.c ft_isblank.c ft_isupper.c ft_islower.c ft_strndup.c \
+ft_strtrimc.c ft_strnjoin.c ft_strlen_chr.c
 FLAGS = -Wall -Wextra -Werror
 OSRC = $(SRC:.c=.o)
+HEADER = libft.h
 
 all: $(NAME)
 
 $(NAME):
 	$(CC) $(FLAGS) -c $(SRC)
 	ar rc $(NAME) $(OSRC)
+	ranlib $(NAME)
+
+%.o: %.c
+	$(CC) -o $@ $(FLAGS) -c $<
 
 clean:
 	-rm -f $(OSRC)
