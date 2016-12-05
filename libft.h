@@ -85,8 +85,6 @@ int				ft_isspace(char c);
 int				ft_isblank(int c);
 int				ft_isupper(int c);
 int				ft_islower(int c);
-void			ft_lstinsert(t_list **alst, t_list *add, int pos);
-t_list			*ft_lstsearch(t_list *lst, void *content);
 int				ft_lstlen(t_list **alst);
 char			*ft_strtrimc(const char *s, char c);
 char			*ft_strndup(const char *s1, size_t n);
