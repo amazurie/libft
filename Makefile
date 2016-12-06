@@ -6,7 +6,7 @@
 #    By: amazurie <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 13:11:07 by amazurie          #+#    #+#              #
-#    Updated: 2016/11/14 12:38:11 by amazurie         ###   ########.fr        #
+#    Updated: 2016/12/06 11:17:05 by amazurie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ HEADER = libft.h
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(FLAGS) -c $(SRC)
+	$(CC) $(FLAGS) -c $(SRC) -I includes
 	ar rc $(NAME) $(OSRC)
 	ranlib $(NAME)
 
