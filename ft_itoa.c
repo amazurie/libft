@@ -6,32 +6,22 @@
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 16:15:40 by amazurie          #+#    #+#             */
-/*   Updated: 2016/11/10 15:10:13 by amazurie         ###   ########.fr       */
+/*   Updated: 2016/12/12 15:24:24 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_lennb(int n)
-{
-	int i;
-
-	i = 0;
-	while (n /= 10)
-		i++;
-	return (i);
-}
-
 char		*ft_itoa(int n)
 {
 	char	*str;
-	long	i;
-	long	tmp;
+	size_t	i;
+	size_t	tmp;
 
-	tmp = (long)n;
+	tmp = n;
 	if (n < 0)
 		tmp *= -1;
-	i = (long)ft_lennb(tmp) + (n < 0);
+	i = ft_lennb(tmp) + (n < 0);
 	if (!(str = ft_strnew(i + 1)))
 		return (NULL);
 	if (n == 0)

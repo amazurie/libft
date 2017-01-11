@@ -6,7 +6,7 @@
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 17:29:42 by amazurie          #+#    #+#             */
-/*   Updated: 2016/11/14 10:18:54 by amazurie         ###   ########.fr       */
+/*   Updated: 2016/12/12 15:07:09 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,15 @@ char			*ft_strtrimc(const char *s, char c);
 char			*ft_strndup(const char *s1, size_t n);
 char			*ft_strnjoin(char const *s1, char const *s2, size_t n);
 int				ft_strlen_chr(char *s, char c);
+size_t			ft_strnlen(const char *str, size_t maxlen);
+void			ft_putnstr(char const *str, size_t str_len);
+void			ft_putnchar(const char c, size_t n);
+size_t			ft_lennb(size_t c);
+void			ft_putnbrbase(size_t nb, char *base);
+size_t			ft_lennbase(size_t n, char *base);
+void			ft_putwchar(wchar_t c);
+void			ft_putwstr(wchar_t *s);
+size_t			ft_wstrlen(wchar_t *s);
+void			ft_putnwstr(wchar_t *s, size_t n);
 
 #endif

@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strnlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 15:09:25 by amazurie          #+#    #+#             */
-/*   Updated: 2016/11/10 12:41:46 by amazurie         ###   ########.fr       */
+/*   Created: 2017/01/11 13:24:55 by amazurie          #+#    #+#             */
+/*   Updated: 2017/01/11 13:25:02 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+size_t		ft_strnlen(const char *str, size_t maxlen)
 {
-	if (as)
-	{
-		free(*as);
-		*as = NULL;
-	}
+	size_t	i;
+
+	i = 0;
+	while (str[i] && i < maxlen)
+		i++;
+	return (i);
 }

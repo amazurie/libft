@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_wstrlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 15:09:25 by amazurie          #+#    #+#             */
-/*   Updated: 2016/11/10 12:41:46 by amazurie         ###   ########.fr       */
+/*   Created: 2016/12/19 16:35:12 by amazurie          #+#    #+#             */
+/*   Updated: 2016/12/19 16:35:14 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+size_t	ft_wstrlen(wchar_t *s)
 {
-	if (as)
+	size_t i;
+	size_t j;
+
+	j = 0;
+	i = 0;
+	while (s[i])
 	{
-		free(*as);
-		*as = NULL;
+		if (s[i] <= 0x7F)
+			j++;
+		else if (s[i] <= 0x7FF)
+			j += 2;
+		else if (s[i] <= 0xFFFF)
+			j += 3;
+		else if (s[i] <= 0x10FFFF)
+			j += 4;
+		i++;
 	}
+	return (j);
 }

@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_putnwstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 15:09:25 by amazurie          #+#    #+#             */
-/*   Updated: 2016/11/10 12:41:46 by amazurie         ###   ########.fr       */
+/*   Created: 2016/12/19 16:35:02 by amazurie          #+#    #+#             */
+/*   Updated: 2016/12/19 16:35:04 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+void	ft_putnwstr(wchar_t *s, size_t n)
 {
-	if (as)
-	{
-		free(*as);
-		*as = NULL;
-	}
+	size_t	i;
+
+	i = 0;
+	while (s[i] && i < n)
+		ft_putwchar(s[i++]);
 }
