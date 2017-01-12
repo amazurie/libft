@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnwstr.c                                      :+:      :+:    :+:   */
+/*   ft_wstrnlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/12 11:36:47 by amazurie          #+#    #+#             */
-/*   Updated: 2017/01/12 11:36:48 by amazurie         ###   ########.fr       */
+/*   Created: 2017/01/11 16:33:03 by amazurie          #+#    #+#             */
+/*   Updated: 2017/01/12 11:39:42 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnwstr(wchar_t *s, size_t n)
+int	ft_wstrnlen(wchar_t *str, size_t len, size_t i)
 {
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	while (s[i] && j < n)
-	{
-		if (s[i] <= 0x7F)
-			j++;
-		else if (s[i] <= 0x7FF)
-			j += 2;
-		else if (s[i] <= 0xFFFF)
-			j += 3;
-		else if (s[i] <= 0x10FFFF)
-			j += 4;
-		if (j <= n)
-			ft_putwchar(s[i]);
-		i++;
-	}
+	if (!*str || !len)
+		return (i);
+	if (*str <= 0x7F)
+		return (ft_wstrnlen(++str, --len, i + 1));
+	if (*str <= 0x7FF && len >= 2)
+		return (ft_wstrnlen(++str, len - 2, i + 2));
+	if (*str <= 0xFFFF && len >= 3)
+		return (ft_wstrnlen(++str, len - 3, i + 3));
+	if (*str <= 0x10FFFF && len >= 4)
+		return (ft_wstrnlen(++str, len - 4, i + 4));
+	return (i);
 }
