@@ -6,7 +6,7 @@
 #    By: amazurie <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 13:11:07 by amazurie          #+#    #+#              #
-#    Updated: 2017/01/11 16:37:48 by amazurie         ###   ########.fr        #
+#    Updated: 2017/01/13 13:47:12 by amazurie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ ft_memalloc.c ft_putchar.c ft_strequ.c ft_strncat.c ft_strstr.c ft_lstnew.c \
 ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_isspace.c \
 ft_isblank.c ft_isupper.c ft_islower.c ft_strndup.c ft_strtrimc.c ft_strnjoin.c \
 ft_strlen_chr.c ft_putnstr.c ft_putnchar.c ft_lennb.c ft_putnbrbase.c ft_putwstr.c \
-ft_lennbase.c ft_putwchar.c ft_wstrlen.c ft_putnwstr.c ft_wstrlen.c
+ft_lennbase.c ft_putwchar.c ft_wstrlen.c ft_putnwstr.c ft_wstrlen.c ft_itoa_base.c
 
 FLAGS = -Wall -Wextra -Werror
 

@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/10 08:12:00 by amazurie          #+#    #+#             */
-/*   Updated: 2017/01/13 13:16:05 by amazurie         ###   ########.fr       */
+/*   Created: 2017/01/13 13:40:05 by amazurie          #+#    #+#             */
+/*   Updated: 2017/01/13 15:50:36 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+static void	ft_handle_itoa_base(size_t nb, char *base, char *s, int *i)
 {
-	int	i;
-	int	j;
+	size_t len;
+
+	len = ft_strlen(base);
+	if (nb < len)
+		s[(*i)++] = base[nb];
+	else
+	{
+		ft_handle_itoa_base(nb / len, base, s, i);
+		ft_handle_itoa_base(nb % len, base, s, i);
+	}
+}
+
+char	*ft_itoa_base(size_t nb, char *base)
+{
+	int		i;
+	char	*s;
 
 	i = 0;
-	j = 0;
-	while (s1[i])
-		i++;
-	while (s2[j])
-		s1[i++] = s2[j++];
-	s1[i] = '\0';
-	return (s1);
+	s = (char *)ft_memalloc(sizeof(int) * ft_lennb(nb));
+	ft_handle_itoa_base(nb, base, s, &i);
+	return (s);
 }

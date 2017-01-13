@@ -6,7 +6,7 @@
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 17:29:42 by amazurie          #+#    #+#             */
-/*   Updated: 2017/01/11 17:57:19 by amazurie         ###   ########.fr       */
+/*   Updated: 2017/01/13 14:39:16 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,6 @@ void			ft_putwstr(wchar_t *s);
 size_t			ft_wstrlen(wchar_t *s);
 void			ft_putnwstr(wchar_t *s, size_t n);
 int				ft_wstrnlen(wchar_t *str, size_t len, size_t i);
+char			*ft_itoa_base(size_t nbr, char *base);
 
 #endif
