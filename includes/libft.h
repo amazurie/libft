@@ -6,7 +6,7 @@
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 17:29:42 by amazurie          #+#    #+#             */
-/*   Updated: 2017/01/13 14:39:16 by amazurie         ###   ########.fr       */
+/*   Updated: 2017/01/30 12:09:13 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +101,6 @@ size_t			ft_wstrlen(wchar_t *s);
 void			ft_putnwstr(wchar_t *s, size_t n);
 int				ft_wstrnlen(wchar_t *str, size_t len, size_t i);
 char			*ft_itoa_base(size_t nbr, char *base);
+void			ft_strswap(char **s1, char **s2);
 
 #endif

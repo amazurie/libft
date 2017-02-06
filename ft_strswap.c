@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/09 17:14:59 by amazurie          #+#    #+#             */
-/*   Updated: 2017/01/30 15:12:35 by amazurie         ###   ########.fr       */
+/*   Created: 2017/01/30 11:38:14 by amazurie          #+#    #+#             */
+/*   Updated: 2017/01/30 12:10:18 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+void	ft_strswap(char **s1, char **s2)
 {
-	unsigned int	i;
+	char *str;
 
-	i = 0;
-	if (!s1[i] && !s2[i])
-		return (0);
-	while (s1[i] && s2[i] && s1[i] == s2[i])
-		i++;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	str = ft_strdup(*s1);
+	*s1 = ft_strdup(*s2);
+	*s2 = ft_strdup(str);
+	free(str);
 }
