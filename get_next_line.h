@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strswap.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/30 11:38:14 by amazurie          #+#    #+#             */
-/*   Updated: 2017/03/03 13:43:59 by amazurie         ###   ########.fr       */
+/*   Created: 2016/11/12 10:10:16 by amazurie          #+#    #+#             */
+/*   Updated: 2016/12/06 15:56:33 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# include <fcntl.h>
 
-void	ft_strswap(char **s1, char **s2)
+# define BUFF_SIZE 16
+# define DELIMITER '\n'
+
+typedef struct	s_line
 {
-	char *str;
+	int				fd;
+	char			*line;
+	struct s_line	*next;
+}				t_line;
 
-	if (*s1 && *s2)
-	{
-		str = ft_strdup(*s1);
-		free(*s1);
-		*s1 = ft_strdup(*s2);
-		free(*s2);
-		*s2 = ft_strdup(str);
-		free(str);
-	}
-}
+int				get_next_line(const int fd, char **line);
+
+#endif

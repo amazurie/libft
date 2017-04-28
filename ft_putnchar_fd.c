@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strswap.c                                       :+:      :+:    :+:   */
+/*   ft_putnchar_fd.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/30 11:38:14 by amazurie          #+#    #+#             */
-/*   Updated: 2017/03/03 13:43:59 by amazurie         ###   ########.fr       */
+/*   Created: 2017/01/11 13:15:02 by amazurie          #+#    #+#             */
+/*   Updated: 2017/04/11 16:23:22 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strswap(char **s1, char **s2)
+void	ft_putnchar_fd(const char c, size_t n, int fd)
 {
-	char *str;
+	size_t i;
 
-	if (*s1 && *s2)
-	{
-		str = ft_strdup(*s1);
-		free(*s1);
-		*s1 = ft_strdup(*s2);
-		free(*s2);
-		*s2 = ft_strdup(str);
-		free(str);
-	}
+	i = 0;
+	while (i++ < n)
+		ft_putchar_fd(c, fd);
 }
