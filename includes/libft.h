@@ -6,7 +6,7 @@
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 17:29:42 by amazurie          #+#    #+#             */
-/*   Updated: 2017/04/11 16:23:59 by amazurie         ###   ########.fr       */
+/*   Updated: 2017/03/03 14:08:07 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,6 @@ char			*ft_strnjoin(char const *s1, char const *s2, size_t n);
 int				ft_strlen_chr(char *s, char c);
 void			ft_putnstr(char const *str, size_t str_len);
 void			ft_putnchar(const char c, size_t n);
-void			ft_putnchar_fd(const char c, size_t n, int fd);
 size_t			ft_lennb(size_t c);
 void			ft_putnbrbase(size_t nb, char *base);
 size_t			ft_lennbase(size_t n, char *base);
@@ -106,5 +105,9 @@ char			*ft_itoa_base(size_t nbr, char *base);
 void			ft_strswap(char **s1, char **s2);
 char			*ft_strschr(char *s, char *s2);
 size_t			ft_strschr_len(char *s, char *s2);
+void			ft_putnstr_fd(const char *s, int fd, int n);
+int				ft_strcountc(char *s, char c);
+int				ft_strisprint(char *s);
+void			ft_lstcontdel(void *cont, size_t size);
 
 #endif

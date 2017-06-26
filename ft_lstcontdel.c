@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstcontdel.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/08 16:39:00 by amazurie          #+#    #+#             */
-/*   Updated: 2017/06/07 14:45:15 by amazurie         ###   ########.fr       */
+/*   Created: 2017/06/07 12:40:45 by amazurie          #+#    #+#             */
+/*   Updated: 2017/06/07 12:40:46 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstcontdel(void *cont, size_t size)
 {
-	ft_memset(s, 0, n);
+	ft_memdel(&cont);
+	size = 0;
 }

@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strisprint.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/08 16:39:00 by amazurie          #+#    #+#             */
-/*   Updated: 2017/06/07 14:45:15 by amazurie         ###   ########.fr       */
+/*   Created: 2017/06/07 12:41:09 by amazurie          #+#    #+#             */
+/*   Updated: 2017/06/07 12:41:10 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int		ft_strisprint(char *s)
 {
-	ft_memset(s, 0, n);
+	int	i;
+
+	i = -1;
+	while (s[++i])
+		if (ft_isprint(s[i]) == 0)
+			return (0);
+	return (1);
 }

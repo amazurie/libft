@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putnstr_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/08 16:39:00 by amazurie          #+#    #+#             */
-/*   Updated: 2017/06/07 14:45:15 by amazurie         ###   ########.fr       */
+/*   Created: 2016/11/04 14:38:04 by amazurie          #+#    #+#             */
+/*   Updated: 2016/11/10 13:22:10 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_putnstr_fd(char const *s, int fd, int n)
 {
-	ft_memset(s, 0, n);
+	int i;
+
+	i = -1;
+	if (s)
+	{
+		while (s[++i] && i < n)
+			ft_putchar_fd(s[i], fd);
+	}
 }

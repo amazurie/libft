@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strcountc.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/08 16:39:00 by amazurie          #+#    #+#             */
-/*   Updated: 2017/06/07 14:45:15 by amazurie         ###   ########.fr       */
+/*   Created: 2017/06/07 12:41:01 by amazurie          #+#    #+#             */
+/*   Updated: 2017/06/07 12:41:02 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int		ft_strcountc(char *s, char c)
 {
-	ft_memset(s, 0, n);
+	int	i;
+	int	j;
+
+	i = -1;
+	j = 0;
+	while (s[++i])
+		if (s[i] == c)
+			j++;
+	return (j);
 }
