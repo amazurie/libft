@@ -6,7 +6,7 @@
 #    By: amazurie <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/05 13:11:07 by amazurie          #+#    #+#              #
-#    Updated: 2017/05/24 18:22:59 by amazurie         ###   ########.fr        #
+#    Updated: 2017/08/22 15:30:49 by amazurie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,9 +34,13 @@ ft_wstrlen.c ft_putnwstr.c ft_wstrnlen.c ft_itoa_base.c ft_strswap.c		\
 ft_strschr.c ft_strschr_len.c ft_putnstr_fd.c ft_strcountc.c				\
 ft_strisprint.c ft_lstcontdel.c get_next_line.c
 
+DFLAGS = -MMD
+
 FLAGS = -Wall -Wextra -Werror
 
 OSRC = $(SRC:.c=.o)
+
+DEPS := $(SRC:.c=.d)
 
 HEADER = libft.h
 
@@ -56,7 +60,7 @@ $(NAME): $(OSRC)
 	@echo "$(OK_COLOR)$@ compiled.$(NO_COLOR)"
 
 %.o: %.c
-	@$(CC) -o $@ $(FLAGS) -I $(INC) -c $<
+	@$(CC) $(FLAGS) $(DFLAGS) -I $(INC) -c $< -o $@
 	@$(eval compteur = $(shell echo $$(($(compteur)+1))))
 	@$(eval total = $(shell echo ${compteur}*100 | bc))
 	@$(eval total = $(shell echo ${total}/$(TOTAL_FILE) | bc))
@@ -69,6 +73,7 @@ $(NAME): $(OSRC)
 
 clean:
 	@rm -f $(OSRC)
+	@rm -f $(DEPS)
 	@echo "$(DEL_COLOR)Cleaning temporary files.$(NO_COLOR)"
 
 fclean: clean
@@ -76,3 +81,5 @@ fclean: clean
 	@echo "$(DEL_COLOR)Delete $(NAME) file.$(NO_COLOR)"
 
 re: fclean all
+
+-include $(DEPS)
