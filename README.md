@@ -10,5 +10,5 @@ Le Makefile doit au moins proposer les règles $(NAME), all, clean, fclean et re
 Le Makefile doit compiler avec les flags de compilation -Wall, -Wextra et -Werror.
 
 Seules les fonctions suivantes de la libc sont autorisées : malloc(3), free(3) et Write(2) et leur utilisation est restreinte.
-Une chaine de caractères est TOUJOURS terminée par un ’\0’. \n
+Une chaine de caractères est TOUJOURS terminée par un ’\0’.
 Interdiction d’utiliser des variables globales.
