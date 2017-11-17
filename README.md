@@ -3,8 +3,7 @@
 Ceci n'est ien de plus qu'une librairie créer suivant certaines règles, parmis celles-ci :
 
 
-le dossier ne devra comprendre qu’un seul .h qui sera libft.h.
-
+le dossier ne devra comprendre qu’un seul .h qui sera libft.h. <br />
 Le Makefile rendu compilera les sources vers une bibliothèque statique nommée libft.a. <br />
 Le Makefile doit au moins proposer les règles $(NAME), all, clean, fclean et re. <br />
 Le Makefile doit compiler avec les flags de compilation -Wall, -Wextra et -Werror.
