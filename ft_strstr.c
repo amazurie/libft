@@ -6,11 +6,11 @@
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 16:39:00 by amazurie          #+#    #+#             */
-/*   Updated: 2016/11/09 11:18:42 by amazurie         ###   ########.fr       */
+/*   Updated: 2019/02/21 14:59:23 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 char	*ft_strstr(const char *big, const char *little)
 {

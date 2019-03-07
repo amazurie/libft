@@ -6,18 +6,19 @@
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 14:30:54 by amazurie          #+#    #+#             */
-/*   Updated: 2016/11/10 13:21:11 by amazurie         ###   ########.fr       */
+/*   Updated: 2019/03/07 17:00:38 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 void	ft_putnstr(char const *s, size_t n)
 {
 	size_t i;
 
-	i = 0;
 	if (s)
-		while (s[i] && i < n)
-			ft_putchar(s[i++]);
+	{
+		i = ft_strlen(s);
+		write(1, s, i > n ? n : i);
+	}
 }

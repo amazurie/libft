@@ -6,7 +6,7 @@
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/11 17:42:54 by amazurie          #+#    #+#             */
-/*   Updated: 2016/11/11 17:47:44 by amazurie         ###   ########.fr       */
+/*   Updated: 2018/11/19 17:30:46 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int		ft_lstlen(t_list **alst)
 	size_t	i;
 
 	tmp = *alst;
+	i = 0;
 	while (tmp->next)
 	{
 		tmp = tmp->next;
