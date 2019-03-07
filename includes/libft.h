@@ -6,7 +6,7 @@
 /*   By: amazurie <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 11:48:48 by amazurie          #+#    #+#             */
-/*   Updated: 2019/02/15 14:30:52 by amazurie         ###   ########.fr       */
+/*   Updated: 2019/03/07 17:31:09 by amazurie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void			ft_putnbr_fd(int n, int fd);
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void			ft_lstadd(t_list **alst, t_list *newelem);
+void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int				ft_isspace(char c);
@@ -91,6 +91,7 @@ char			*ft_strndup(const char *s1, size_t n);
 char			*ft_strnjoin(char const *s1, char const *s2, size_t n);
 size_t			ft_strlen_chr(char *s, char c);
 void			ft_putnstr(char const *str, size_t str_len);
+void			ft_putnstr_fd(char const *s, int fd, size_t str_len);
 void			ft_putnchar(const char c, size_t n);
 size_t			ft_lennb(size_t c);
 void			ft_putnbrbase(size_t nb, char *base);
@@ -102,6 +103,5 @@ void			ft_putnwstr(wchar_t *s, size_t n);
 int				ft_wstrnlen(wchar_t *str, size_t len, size_t i);
 char			*ft_itoa_base(size_t nbr, char *base);
 void			ft_strswap(char **s1, char **s2);
-void			ft_putunbr(unsigned int u);
 
 #endif
